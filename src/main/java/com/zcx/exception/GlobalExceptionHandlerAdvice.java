@@ -13,10 +13,9 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandlerAdvice {
 
-  @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
   @ExceptionHandler(IllegalArgumentException.class)
   public ResultVo handlerIllegalArgumentException(IllegalArgumentException exception) {
-    return ResultBuilder.buildFail(exception.getMessage(), "400");
+    return ResultBuilder.buildFail(exception.getMessage(), "999");
   }
 
   @ExceptionHandler(value = {NullPointerException.class, MySQLSyntaxErrorException.class})
