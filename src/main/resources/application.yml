@@ -1,12 +1,12 @@
 #服务信息
 info:
     app:
-        name: zcx-service
-        description: zcx服务
+        name: spring-boot-druid
+        description: spring-boot-druid服务
         owner:
-            - zuochuanxiu
+            - zuozmein
         emails:
-            - zuochuanxiu@ecej.com
+            - badmeetevil@qq.com
         env: ${SPRING_PROFILES_ACTIVE}
         java-version: ${java.version}
 

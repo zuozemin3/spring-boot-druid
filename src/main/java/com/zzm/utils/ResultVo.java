@@ -1,4 +1,4 @@
-package com.zcx.utils;
+package com.zzm.utils;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;

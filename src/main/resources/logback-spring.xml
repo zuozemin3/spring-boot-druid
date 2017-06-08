@@ -4,9 +4,9 @@
   <logger name="org.springframework.web" level="INFO"/>
 
   <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
-    <File>/logs/zcx-service/app.log</File>
+    <File>/logs/spring-boot-druid/app.log</File>
     <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
-      <FileNamePattern>/logs/zcx-service/app.%d{yyyy-MM-dd}.log</FileNamePattern>
+      <FileNamePattern>/logs/spring-boot-druid/app.%d{yyyy-MM-dd}.log</FileNamePattern>
       <maxHistory>10</maxHistory>
     </rollingPolicy>
     <encoder>
@@ -15,18 +15,18 @@
   </appender>
 
   <springProfile name="dev">
-    <logger name="com.zcx" level="DEBUG"/>
+    <logger name="com.zzm" level="DEBUG"/>
     <root>
       <appender-ref ref="FILE"/>
     </root>
   </springProfile>
 
   <springProfile name="qa">
-    <logger name="com.zcx" level="INFO"/>
+    <logger name="com.zzm" level="INFO"/>
   </springProfile>
 
   <springProfile name="prod">
-    <logger name="com.zcx" level="ERROR"/>
+    <logger name="com.zzm" level="ERROR"/>
   </springProfile>
 
 

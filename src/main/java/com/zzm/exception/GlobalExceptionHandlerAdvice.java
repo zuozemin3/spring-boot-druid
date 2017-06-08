@@ -1,12 +1,10 @@
-package com.zcx.exception;
+package com.zzm.exception;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
-import com.zcx.utils.ResultBuilder;
-import com.zcx.utils.ResultVo;
+import com.zzm.utils.ResultBuilder;
+import com.zzm.utils.ResultVo;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @Slf4j

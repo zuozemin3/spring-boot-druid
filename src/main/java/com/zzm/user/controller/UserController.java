@@ -1,8 +1,8 @@
-package com.zcx.user.controller;
+package com.zzm.user.controller;
 
-import com.zcx.user.service.UserService;
-import com.zcx.utils.ResultBuilder;
-import com.zcx.utils.ResultVo;
+import com.zzm.user.service.UserService;
+import com.zzm.utils.ResultBuilder;
+import com.zzm.utils.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;

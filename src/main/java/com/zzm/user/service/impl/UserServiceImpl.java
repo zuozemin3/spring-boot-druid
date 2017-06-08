@@ -1,8 +1,8 @@
-package com.zcx.user.service.impl;
+package com.zzm.user.service.impl;
 
-import com.zcx.user.dao.UserDao;
-import com.zcx.user.service.UserService;
-import com.zcx.user.vo.UserVo;
+import com.zzm.user.dao.UserDao;
+import com.zzm.user.service.UserService;
+import com.zzm.user.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

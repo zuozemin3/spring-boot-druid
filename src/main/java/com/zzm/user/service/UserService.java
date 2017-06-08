@@ -1,6 +1,6 @@
-package com.zcx.user.service;
+package com.zzm.user.service;
 
-import com.zcx.user.vo.UserVo;
+import com.zzm.user.vo.UserVo;
 
 public interface UserService {
 

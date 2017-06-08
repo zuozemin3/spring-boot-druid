@@ -1,4 +1,4 @@
-package com.zcx.user.vo;
+package com.zzm.user.vo;
 
 import java.io.Serializable;
 import lombok.Data;
