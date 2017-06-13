@@ -20,9 +20,15 @@ public class GlobalExceptionHandlerAdvice {
   }
 
   @ExceptionHandler(value = {NullPointerException.class, MySQLSyntaxErrorException.class,
-      BadSqlGrammarException.class, MyBatisSystemException.class,ReflectionException.class})
-  public ResultVo handlerException(RuntimeException exception) {
+      BadSqlGrammarException.class, MyBatisSystemException.class, ReflectionException.class})
+  public ResultVo handlerRuntimeException(RuntimeException exception) {
     log.error(exception.getMessage(), exception);
     return ResultBuilder.buildFail("Internal Server Error", "500");
+  }
+
+  @ExceptionHandler(value = {Exception.class})
+  public ResultVo handlerException(Exception exception) {
+    log.error(exception.getMessage(), exception);
+    return ResultBuilder.buildFail("system exception", "500");
   }
 }
