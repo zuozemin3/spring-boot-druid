@@ -8,4 +8,6 @@ public interface UserService {
    * 根据用户id获取用户信息
    */
   UserVo getUserById(Integer id);
+
+  Integer add(UserVo userVo);
 }

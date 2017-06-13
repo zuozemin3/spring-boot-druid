@@ -6,6 +6,7 @@ import lombok.Data;
 @Data
 public class UserVo implements Serializable {
 
-  private Integer id;
-  private String name;
+  private Integer userId;
+  private String userName;
+  private Integer userAge;
 }
