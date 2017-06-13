@@ -1,5 +1,8 @@
 package com.zzm.student.service;
 
+import static org.hamcrest.Matchers.greaterThan;
+import static org.junit.Assert.assertThat;
+
 import com.zzm.student.vo.StudentVo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,7 +24,7 @@ public class StudentServiceTest {
     StudentVo studentVo = new StudentVo();
     studentVo.setName("王五");
     studentService.add(studentVo);
-    System.out.println(studentVo.getId());
+    assertThat(studentVo.getId(), greaterThan(1));
   }
 
 }
