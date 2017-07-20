@@ -7,6 +7,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.ibatis.reflection.ReflectionException;
 import org.mybatis.spring.MyBatisSystemException;
 import org.springframework.jdbc.BadSqlGrammarException;
+import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
@@ -14,21 +15,27 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 @RestControllerAdvice
 public class GlobalExceptionHandlerAdvice {
 
-  @ExceptionHandler(IllegalArgumentException.class)
-  public ResultVo handlerIllegalArgumentException(IllegalArgumentException exception) {
-    return ResultBuilder.buildFail(exception.getMessage(), "999");
-  }
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResultVo handlerIllegalArgumentException(IllegalArgumentException exception) {
+        return ResultBuilder.buildFail(exception.getMessage(), "999");
+    }
 
-  @ExceptionHandler(value = {NullPointerException.class, MySQLSyntaxErrorException.class,
-      BadSqlGrammarException.class, MyBatisSystemException.class, ReflectionException.class})
-  public ResultVo handlerRuntimeException(RuntimeException exception) {
-    log.error(exception.getMessage(), exception);
-    return ResultBuilder.buildFail("Internal Server Error", "500");
-  }
+    @ExceptionHandler(value = {NullPointerException.class, MySQLSyntaxErrorException.class,
+            BadSqlGrammarException.class, MyBatisSystemException.class, ReflectionException.class})
+    public ResultVo handlerRuntimeException(RuntimeException exception) {
+        log.error(exception.getMessage(), exception);
+        return ResultBuilder.buildFail("Internal Server Error", "500");
+    }
 
-  @ExceptionHandler(value = {Exception.class})
-  public ResultVo handlerException(Exception exception) {
-    log.error(exception.getMessage(), exception);
-    return ResultBuilder.buildFail("system exception", "500");
-  }
+    @ExceptionHandler(value = {HttpRequestMethodNotSupportedException.class})
+    public ResultVo handlerHttpRequestMethodNotSupportedException(HttpRequestMethodNotSupportedException exception) {
+        log.error(exception.getMessage(), exception);
+        return ResultBuilder.buildFail(exception.getMessage(), "999");
+    }
+
+    @ExceptionHandler(value = {Exception.class})
+    public ResultVo handlerException(Exception exception) {
+        log.error(exception.getMessage(), exception);
+        return ResultBuilder.buildFail("system exception", "500");
+    }
 }

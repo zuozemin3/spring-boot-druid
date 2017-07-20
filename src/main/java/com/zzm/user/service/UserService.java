@@ -4,10 +4,13 @@ import com.zzm.user.vo.UserVo;
 
 public interface UserService {
 
-  /**
-   * 根据用户id获取用户信息
-   */
-  UserVo getUserById(Integer id);
+    /**
+     * 根据用户id获取用户信息
+     */
+    UserVo getUserById(Integer id);
 
-  Integer add(UserVo userVo);
+    /**
+     * 新增用户
+     */
+    Integer add(UserVo userVo);
 }
