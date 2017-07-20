@@ -2,6 +2,7 @@ package com.zzm.user.service;
 
 import com.zzm.user.vo.UserVo;
 import lombok.Data;
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,9 +26,15 @@ public class userServiceTest {
     @Rollback
     public void saveUser() {
         UserVo userVo = new UserVo();
-        userVo.setUserName("李四");
-        userVo.setUserAge(18);
+        userVo.setName("李四");
+        userVo.setAge(18);
         userService.add(userVo);
+    }
+
+    @Test
+    public void getUser() {
+        UserVo userVo = userService.getUserById(1);
+        Assert.assertEquals(userVo.getName(), "zhangshan");
     }
 
 }

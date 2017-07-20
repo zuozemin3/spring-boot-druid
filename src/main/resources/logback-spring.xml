@@ -22,7 +22,7 @@
   </springProfile>
 
   <springProfile name="qa">
-    <logger name="com.zzm" level="INFO"/>
+    <logger name="com.zzm" level="DEBUG"/>
     <root>
       <appender-ref ref="FILE"/>
     </root>

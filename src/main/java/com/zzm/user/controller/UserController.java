@@ -23,7 +23,7 @@ public class UserController {
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResultVo getUserById(@PathVariable Integer id) {
         UserVo userVo = userService.getUserById(id);
-        return ResultBuilder.buildSuccess().with("userName", userVo.getUserName());
+        return ResultBuilder.buildSuccess().with("userName", userVo.getName());
     }
 
     @RequestMapping(value = "", method = RequestMethod.POST)

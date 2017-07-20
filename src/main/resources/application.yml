@@ -56,7 +56,7 @@ datasource:
     username: root
     password: root
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/zcx?useUnicode=true&amp;characterEncoding=UTF-8&useSSL=false
+    url: jdbc:mysql://localhost:3306/db1?useUnicode=true&amp;characterEncoding=UTF-8&useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
 
 
