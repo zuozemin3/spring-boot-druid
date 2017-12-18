@@ -5,6 +5,7 @@ import com.zzm.user.vo.UserVo;
 import com.zzm.utils.ResultBuilder;
 import com.zzm.utils.ResultVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class UserController {
     private UserService userService;
 
     @ApiOperation(value = "根据用户id获取用户信息")
+    @ApiImplicitParam(name = "id",value = "用户id",required = true,paramType = "path",dataType = "int")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResultVo getUserById(@PathVariable Integer id) {
         UserVo userVo = userService.getUserById(id);
