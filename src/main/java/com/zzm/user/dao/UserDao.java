@@ -7,6 +7,8 @@ import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
+import java.util.List;
+
 @Mapper
 public interface UserDao {
 
@@ -17,4 +19,6 @@ public interface UserDao {
     @Options(useGeneratedKeys = true)
     Integer add(UserVo userVo);
 
+    @Select("select create_time,update_time from t_user;")
+    List<UserVo> findAll();
 }

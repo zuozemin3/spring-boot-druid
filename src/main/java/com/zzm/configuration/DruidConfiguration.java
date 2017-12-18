@@ -88,7 +88,7 @@ public class DruidConfiguration {
     }
 
     @Bean
-    public ServletRegistrationBean statViewServle() {
+    public ServletRegistrationBean statViewServlet() {
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(
                 new StatViewServlet(), "/druid/*");
         // IP白名单
