@@ -24,7 +24,7 @@ public class SwaggerConfiguration {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.zzm.user.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.zzm"))
                 .paths(PathSelectors.any())
                 .build();
     }
