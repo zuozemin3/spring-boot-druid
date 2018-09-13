@@ -4,6 +4,7 @@ import com.zzm.user.vo.UserVo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.net.ftp.FTPClient;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class UserDaoTest {
     @Autowired
     private UserDao userDao;
 
+    @Ignore
     @Test
     public void findAll() {
         List<UserVo> userVoList = userDao.findAll();
@@ -32,6 +34,7 @@ public class UserDaoTest {
     }
 
 
+    @Ignore
     @Test
     public void test() {
         FTPClient ftpClient = new FTPClient();

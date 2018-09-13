@@ -4,6 +4,7 @@ import static org.hamcrest.Matchers.greaterThan;
 import static org.junit.Assert.assertThat;
 
 import com.zzm.student.vo.StudentVo;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class StudentServiceTest {
   @Autowired
   private StudentService studentService;
 
+  @Ignore
   @Test
   public void addTest() {
     StudentVo studentVo = new StudentVo();

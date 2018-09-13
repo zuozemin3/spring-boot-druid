@@ -2,6 +2,7 @@ package com.zzm.student.dao;
 
 import com.zzm.student.vo.StudentVo;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,7 @@ public class StudentDaoTest {
     @Autowired
     private StudentDao studentDao;
 
+    @Ignore
     @Test
     public void findAll() {
         List<StudentVo> studentVoList = studentDao.findAll();

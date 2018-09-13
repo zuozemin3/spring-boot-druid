@@ -11,6 +11,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author kris
  */
@@ -20,11 +22,12 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("user")
 public class UserController {
 
+
     @Autowired
     private UserService userService;
 
     @ApiOperation(value = "根据用户id获取用户信息")
-    @ApiImplicitParam(name = "id",value = "用户id",required = true,paramType = "path",dataType = "int")
+    @ApiImplicitParam(name = "id", value = "用户id", required = true, paramType = "path", dataType = "int")
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResultVo getUserById(@PathVariable Integer id) {
         UserVo userVo = userService.getUserById(id);
@@ -36,5 +39,13 @@ public class UserController {
     public ResultVo saveUser(@RequestBody UserVo userVo) {
         Integer id = userService.add(userVo);
         return ResultBuilder.buildSuccess().with("id", id);
+    }
+
+    @RequestMapping(value = "test", method = RequestMethod.POST)
+    public ResultVo test(@RequestParam("listParam") List<Integer> param) {
+
+        log.info(param.toString());
+
+        return ResultBuilder.buildSuccess();
     }
 }

@@ -1,6 +1,5 @@
 package com.zzm.exception;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 import com.zzm.utils.ResultBuilder;
 import com.zzm.utils.ResultVo;
 import lombok.extern.slf4j.Slf4j;
@@ -20,8 +19,8 @@ public class GlobalExceptionHandlerAdvice {
         return ResultBuilder.buildFail(exception.getMessage(), "999");
     }
 
-    @ExceptionHandler(value = {NullPointerException.class, MySQLSyntaxErrorException.class,
-            BadSqlGrammarException.class, MyBatisSystemException.class, ReflectionException.class})
+    @ExceptionHandler(value = {NullPointerException.class,
+      BadSqlGrammarException.class, MyBatisSystemException.class, ReflectionException.class})
     public ResultVo handlerRuntimeException(RuntimeException exception) {
         log.error(exception.getMessage(), exception);
         return ResultBuilder.buildFail("Internal Server Error", "500");

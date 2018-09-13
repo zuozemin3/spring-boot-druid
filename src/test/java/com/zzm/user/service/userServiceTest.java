@@ -3,6 +3,7 @@ package com.zzm.user.service;
 import com.zzm.user.vo.UserVo;
 import lombok.Data;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,7 @@ public class userServiceTest {
         userService.add(userVo);
     }
 
+    @Ignore
     @Test
     public void getUser() {
         UserVo userVo = userService.getUserById(1);

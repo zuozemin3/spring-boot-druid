@@ -55,7 +55,7 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.40</version>
+            <version>8.0.11</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -91,11 +91,6 @@
             <artifactId>commons-net</artifactId>
             <version>3.5</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>commons-net</groupId>
-            <artifactId>commons-net</artifactId>
-            <version>3.5</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
